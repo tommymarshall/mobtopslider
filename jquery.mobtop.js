@@ -63,10 +63,6 @@
 								left: position + "px"
 							});
 						}
-
-						if(distance.x > 15) {
-							event.preventDefault();
-						}
 					},
 					snap = function(){
 						var vscroll = distance.y < view.height/4 || distance.x+5 > distance.y;
@@ -106,6 +102,10 @@
 							};
 
 							slide();
+
+							if(distance.x > 15) {
+								event.preventDefault();
+							}
 						}
 					},
 					touchStart = function(event) {
