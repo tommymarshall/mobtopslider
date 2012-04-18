@@ -101,6 +101,7 @@
 								y: Math.abs(delta.y)
 							};
 
+							// Start slide motion
 							slide();
 
 							if(distance.x > 15) {
@@ -109,10 +110,10 @@
 						}
 					},
 					touchStart = function(event) {
-						leftOffset = parseFloat($slides.css("left"));
 						if (!supports_touch){
 							event.preventDefault();
 						}
+						leftOffset = parseFloat($slides.css("left"));
 						start = getPos(event);
 						started = true;
 					},
@@ -137,9 +138,9 @@
 			// Set offsets
 			offsets();
 
-			$slidesWrapper[0].addEventListener( events.end, touchEnd, false );
-			$slidesWrapper[0].addEventListener( events.move, touchMove, false );
-			$slidesWrapper[0].addEventListener( events.begin, touchStart, false );
+			$(this)[0].addEventListener( events.begin, touchStart, false );
+			$(this)[0].addEventListener( events.move, touchMove, false );
+			$(this)[0].addEventListener( events.end, touchEnd, false );
     });
 	};
 })( jQuery );
