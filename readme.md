@@ -4,10 +4,12 @@ A simple user-triggered slider for desktop and mobile devices.
 
 ### Instructions
 **Load the Stylesheet**
+
     <link rel="stylesheet" type="text/css" href="mobislider.css">
 
 **Where you want the slider to display**
-    <section class="row wrapper">
+
+    <section class="row mobtop">
     	<ul class="slides">
     		<li>
     			<div class="overlay">
@@ -35,10 +37,11 @@ A simple user-triggered slider for desktop and mobile devices.
     </section>
 
 **In the footer**
+
     <script type="text/javascript">
     	// Load jQuery first...
     	$(document).ready(function(){
-    		$(".wrapper").mobislider({
+    		$(".mobtop").mobislider({
     			speed: 300, // speed slide snaps into place
     			onSnap: function(){} // on each slide change
     		});
