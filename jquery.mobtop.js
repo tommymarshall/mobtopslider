@@ -1,6 +1,6 @@
 (function( $ ) {
 
-  $.fn.mobislider = function( options ) {
+  $.fn.mobtop = function( options ) {
     var settings = $.extend( {
 			speed: 300,
 			onSnap: function() {}
@@ -28,16 +28,12 @@
 					desktop_events = {
 						begin: 'mousedown',
 						end: 'mouseup',
-						move: 'mousemove',
-						posX : pageX, // Will be used as: event.pageX
-						posY : pageY
+						move: 'mousemove'
 					},
 					mobile_events = {
 						begin : 'touchstart',
 						end : 'touchend',
-						move : 'touchmove',
-						posX : targetTouches[0].clientX, // Will be used as: event.targetTouches[0].clientX
-						posY : targetTouches[0].clientY
+						move : 'touchmove'
 					},
 					events = supports_touch ? mobile_events : desktop_events,
 					pager = function(){
@@ -98,32 +94,41 @@
 						}
 					},
 					touchMove = function(event) {
-						end = {
-							x: event.events.posX,
-							y: event.events.posY
-						};
-						delta = {
-							x: start.x - end.x,
-							y: start.y - end.y
-						};
-						distance = {
-							x: Math.abs(delta.x),
-							y: Math.abs(delta.y)
-						};
+						if (started){
+							end = getPos(event);
+							delta = {
+								x: start.x - end.x,
+								y: start.y - end.y
+							};
+							distance = {
+								x: Math.abs(delta.x),
+								y: Math.abs(delta.y)
+							};
 
-						slide();
+							slide();
+						}
 					},
 					touchStart = function(event) {
 						leftOffset = parseFloat($slides.css("left"));
 						if (!supports_touch){
 							event.preventDefault();
 						}
-						start = {
-							x: event.events.posX,
-							y: event.events.posY
-						};
-						
+						start = getPos(event);
 						started = true;
+					},
+					getPos = function(event){
+						var posX,
+								posY;
+					
+						if (!supports_touch){
+							posX= event.pageX;
+							posY= event.pageY;
+						} else {
+							posX = event.targetTouches[0].clientX;
+							posY = event.targetTouches[0].clientX;
+						}
+					
+						return {x: posX, y: posY};
 					};
 
 			// Set widths of slides
