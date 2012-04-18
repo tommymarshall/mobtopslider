@@ -69,15 +69,15 @@
 						}
 					},
 					snap = function(){
-						var vscroll = distance.y > 80 || distance.x+5 < distance.y;
+						var vscroll = distance.y < view.height/4 || distance.x+5 > distance.y;
 						if(vscroll) {
-							$slides.css({
-								left: position + "px"
-							});
-						} else {
 							$slides.animate({
 								left: position + "px"
 							}, settings.speed, settings.onSnap);
+						} else {
+							$slides.css({
+								left: position + "px"
+							});
 						}
 					},
 					touchEnd = function() {
