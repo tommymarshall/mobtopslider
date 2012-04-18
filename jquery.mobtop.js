@@ -11,14 +11,14 @@
 					$slidesPager = $slidesWrapper.find('.slides-pager'),
 					$slides = $slidesWrapper.find('.slides'),
 					slides = $slides.children('li').length,
-					page = 1,
-					start = 0,
-					end = 0,
-					position = 0,
-					distance = 0,
 					delta = 0,
+					distance = 0,
+					end = 0,
 					leftOffset = 0,
 					offset = [],
+					page = 1,
+					position = 0,
+					start = 0,
 					started = false,
 					view = {
 						height: $(window).height(),
@@ -77,7 +77,6 @@
 						}
 					},
 					touchEnd = function() {
-						started = false;
 						if (distance.x > view.width/2 && position < 0 && -position < offset[slides]){
 							if (delta.x > 0) {
 								advance(++page);
@@ -88,6 +87,7 @@
 							position = -offset[page];
 							snap(page);
 						}
+						started = false;
 					},
 					touchMove = function(event) {
 						if (started){
@@ -104,6 +104,7 @@
 							// Start slide motion
 							slide();
 
+							// User has started to slide, prevent vertical scrolling
 							if(distance.x > 15) {
 								event.preventDefault();
 							}
