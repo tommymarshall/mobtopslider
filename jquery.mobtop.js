@@ -3,13 +3,14 @@
   $.fn.mobtop = function( options ) {
     var settings = $.extend( {
 			speed: 300,
+			pager: true,
 			onSnap: function() {}
     }, options);
 
     return this.each(function() {
 			var $slidesWrapper = $(this),
-					$slidesPager = $slidesWrapper.find('.slides-pager'),
-					$slides = $slidesWrapper.find('.slides'),
+					$slidesPager = "",
+					$slides = $slidesWrapper.find('.mobtop-slides'),
 					slides = $slides.children('li').length,
 					delta = 0,
 					distance = 0,
@@ -36,6 +37,22 @@
 						move : 'touchmove'
 					},
 					events = supports_touch ? mobile_events : desktop_events,
+					setupPager = function(){
+						var output = "";
+						$slidesWrapper.append('<ul class="mobtop-pager"><li class="current"></li></ul>');
+						for (var i = 0; i < slides-1; i++) {
+							output += "<li></li>";
+						}
+						$slidesWrapper.find('.mobtop-pager').append(output);
+						$slidesPager = $slidesWrapper.find('.mobtop-pager');
+					},
+					setupCaptions = function(){
+						$slides.find('li').each(function(index){
+							if ( $(this).children('img').attr('data-caption') !== undefined) {
+								$(this).prepend('<div class="overlay"><span class="caption">'+ $(this).children('img').attr('data-caption') +'</span></div>');
+							}
+						});
+					},
 					pager = function(){
 						$slidesPager.children('li').removeClass('current');
 						$slidesPager.children('li').eq(page-1).addClass('current');
@@ -138,6 +155,14 @@
 
 			// Set offsets
 			offsets();
+
+			// Setup slide captions
+			setupCaptions();
+
+			// If pager set
+			if (pager) {
+				setupPager();
+			}
 
 			$(this)[0].addEventListener( events.begin, touchStart, false );
 			$(this)[0].addEventListener( events.move, touchMove, false );

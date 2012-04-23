@@ -1,6 +1,6 @@
 
 /* insert your normalize/reset */
-body {
+* {
 	padding: 0;
 	margin: 0;
 	font-family: Helvetica, Arial;
@@ -8,16 +8,14 @@ body {
 /* end */
 
 /* begin mobtop */
-.row {
-	display:block;
-	width:100%;
-	float:left;
-}
 .mobtop {
-	position: relative;
+	display: block;
+	float: left;
 	overflow: hidden;
+	position: relative;
+	width: 100%;
 }
-.mobtop .slides {
+.mobtop .mobtop-slides {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -25,15 +23,15 @@ body {
 	list-style: none;
 }
 
-.mobtop .slides li {
+.mobtop .mobtop-slides li {
 	position: relative;
 	float: left;
 }
-.mobtop .slides img {
+.mobtop .mobtop-slides img {
 	width: 100%;
 }
 
-.mobtop .slides .overlay {
+.mobtop .mobtop-slides .overlay {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -47,21 +45,21 @@ body {
 	width: 100%;
 	padding-left: 38px;
 }
-.mobtop .slides .caption {
+.mobtop .mobtop-slides .caption {
 	color: #fff;
 	font-size: 15px;
 	font-weight: bold;
 }
 
-.mobtop .slides-pager {
+.mobtop .mobtop-pager {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: 12px;
 	float: right;
 	list-style: none;
 }
 
-.mobtop .slides-pager li {
+.mobtop .mobtop-pager li {
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
 	-ms-border-radius: 100%;
@@ -74,11 +72,11 @@ body {
 	margin: 0 2px;
 }
 
-.mobtop .slides-pager li.current {
+.mobtop .mobtop-pager li.current {
 	background-color: #e00;
 }
 
-.mobtop .slides-pager li:last-child {
+.mobtop .mobtop-pager li:last-child {
 	margin-right: 8px;
 }
 /* end */

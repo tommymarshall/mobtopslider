@@ -10,28 +10,13 @@ A simple user-triggered slider for desktop and mobile devices.
 **Where you want the slider to display**
 
     <section class="row mobtop">
-    	<ul class="slides">
-    		<li>
-    			<div class="overlay">
-    				<span class="caption">
-    					Slide #1
-    				</span>
-    			</div>
-    			<img src="http://placehold.it/320x200" alt="Home">
-    		</li>
-    		<li>
-    			<div class="overlay">
-    				<span class="caption">
-    					Slide #2
-    				</span>
-    			</div>
-    			<img src="http://placehold.it/320x200" alt="Home">
-    		</li>
-    		...
-    	</ul>
-    	<ul class="slides-pager">
-    		<li class="current"></li>	
-    		<li></li>
+    	<ul class="mobtop-slides">
+            <li>
+                <img src="http://placehold.it/320x200" data-caption="Home slide caption here" alt="Home">
+            </li>
+            <li>
+                <img src="http://placehold.it/320x200" data-caption="Image slide caption #2" alt="Next slide...">
+            </li>
     		...
     	</ul>
     </section>
@@ -42,7 +27,8 @@ A simple user-triggered slider for desktop and mobile devices.
     	// Load jQuery first...
     	$(document).ready(function(){
     		$(".mobtop").mobislider({
-    			speed: 300, // speed slide snaps into place
+                speed: 300, // speed slide snaps into place
+                pager: true, // displays pagination
     			onSnap: function(){} // on each slide change
     		});
     	});
