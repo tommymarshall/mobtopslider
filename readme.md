@@ -9,7 +9,7 @@ A simple user-triggered slider for desktop and mobile devices.
 
 **Where you want the slider to display**
 
-    <section class="row mobtop">
+    <section class="mobtop">
     	<ul class="mobtop-slides">
             <li>
                 <img src="http://placehold.it/320x200" data-caption="Home slide caption here" alt="Home">
@@ -23,8 +23,9 @@ A simple user-triggered slider for desktop and mobile devices.
 
 **In the footer**
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="mobtop.jquery.js"></script>
     <script type="text/javascript">
-    	// Load jQuery first...
     	$(document).ready(function(){
     		$(".mobtop").mobislider({
                 speed: 300, // speed slide snaps into place
