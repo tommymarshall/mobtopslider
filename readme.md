@@ -13,10 +13,10 @@ The below example is for mobile, since the images are just 320x200. If you were 
     <section class="mobtop">
     	<ul class="mobtop-slides">
             <li>
-                <img src="http://placehold.it/320x200" data-caption="Home slide caption here" alt="Home">
+                <img src="img/320x200" data-caption="Home slide caption here" alt="Home">
             </li>
             <li>
-                <img src="http://placehold.it/320x200" data-caption="Image slide caption #2" alt="Next slide...">
+                <img src="img/320x200" data-caption="Image slide caption #2" alt="Next slide...">
             </li>
     		...
     	</ul>
