@@ -4,22 +4,16 @@
 	<meta charset="UTF-8">
 	<title>MobiSlider Test</title>
 
-	<!-- Next 3 meta tags are opptimized for Mobile Devices -->
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-
 	<!-- Load the stylesheet -->
-	<link rel="stylesheet" type="text/css" href="mobtop.css">
+	<link rel="stylesheet" type="text/css" href="css/mobtop.css">
 
 </head>
 <body>
 
-
 	<section class="mobtop">
 		<ul class="mobtop-slides">
 			<li>
-				<img src="320x200.gif" data-caption="Home slide caption here" alt="Home">
+				<img src="img/1180x400.gif" data-caption="Home slide caption here" alt="Home">
 			</li>
 			<li>
 				<div class="mobtop-inner" data-caption="How cool is this?">
@@ -31,19 +25,28 @@
 				</div>
 			</li>
 			<li>
-				<img src="320x200.gif" data-caption="<a href='http://google.com'>Add Read More link here</a> " alt="Next slide...">
+				<div class="mobtop-inner" data-caption="How cool is this?">
+					<h2>And even more content!</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.
+					</p>	
+				</div>
 			</li>
 			<li>
-				<img src="320x200.gif" alt="Next slide...Without a caption">
+				<img src="img/1180x400.gif" data-caption="<a href='http://google.com'>Add Read More link here</a> " alt="Next slide with caption.">
 			</li>
 			<li>
-				<img src="320x200.gif" data-caption="Image slide caption of last slide" alt="Next slide...">
+				<img src="img/1180x400.gif" alt="Next slide...Without a caption">
+			</li>
+			<li>
+				<img src="img/1180x400.gif" data-caption="Image slide caption of last slide" alt="Last slide.">
 			</li>
 		</ul>
 	</section>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="mobtop.jquery.js"></script>
+	<script type="text/javascript" src="js/mobtop.jquery.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$(".mobtop").mobtop();
