@@ -5,9 +5,10 @@ A simple user-triggered slider for desktop and mobile devices.
 ### Instructions
 **Load the Stylesheet**
 
-    <link rel="stylesheet" type="text/css" href="mobislider.css">
+    <link rel="stylesheet" type="text/css" href="css/mobislider.css">
 
 **Where you want the slider to display**
+The below example is for mobile, since the images are just 320x200. If you were using this on a Desktop site, the images would probably be larger...
 
     <section class="mobtop">
     	<ul class="mobtop-slides">
@@ -24,7 +25,7 @@ A simple user-triggered slider for desktop and mobile devices.
 **In the footer**
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="mobtop.jquery.js"></script>
+    <script type="text/javascript" src="js/mobtop.jquery.js"></script>
     <script type="text/javascript">
     	$(document).ready(function(){
     		$(".mobtop").mobislider({
