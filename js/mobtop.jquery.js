@@ -162,9 +162,11 @@
 						// If the swipe/mouse click distances are greater than half the screen, then advance
 						if (distance.x > view.width/2 && position < 0 && -position < offset[slides]){
 							if (delta.x > 0) {
-								advance(++page);
+								
+								advance(page++);
 							} else {
-								advance(--page);
+								--page;
+								advance();
 							}
 						} else {
 
@@ -224,7 +226,7 @@
 							posY= event.pageY;
 						} else {
 							posX = event.targetTouches[0].clientX;
-							posY = event.targetTouches[0].clientX;
+							posY = event.targetTouches[0].clientY;
 						}
 					
 						return {x: posX, y: posY};
